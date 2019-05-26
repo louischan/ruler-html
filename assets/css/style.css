@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background: #115198;
+    color: #fff;
+    font-family: sans-serif;
+    height: 100%;
+}
+.mainView {
+    display: block;
+}
+.number {
+    text-anchor: middle;
+    font-size: 36px;
+    fill: #fff;
+}
+.small {
+    font-size: 26px;
+}
+.line-grid {
+    stroke: #548ac6;
+}
+.line-grid-minor {
+    stroke-width: 0.4;
+}
+.line-grid-medium {
+    stroke-width: 0.8;
+}
+.line-grid-major {
+    stroke-width: 1.2;
+}
+.line-scale {
+    stroke: #fff;
+    stroke-width: 1.4;
+}
+button, input, select, textarea {
+    font: inherit;
+    margin: 0;
+}
+label {
+    font-weight: bold;
+}
+#configBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: inline-block;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background: #122142;
+    border: 0;
+    margin: 0;
+    color: inherit;
+    transition-duration: .15s;
+    transition-timing-function: ease-out;
+}
+#configBtn.is-active {
+    transform: scale(.8);
+}
+#configPanel {
+    position: fixed;
+    right: 30px;
+    bottom: 40px;
+    background: #233865;
+    color: #fff;
+    border-radius: 3px;
+    transition-duration: .15s;
+    transition-timing-function: ease-out;
+    transform-origin: bottom right;
+    transform: scale(0) rotate(17deg);
+}
+#configPanel.is-active {
+    transform: none;
+}
+.configPanel-inner {
+    margin: 20px;
+}
+.configPanel-inner > label {
+    margin:  10px 0 6px;
+    display: block;
+}
+.input-group {
+    display: flex;
+    margin: 5px -5px;
+}
+.input-group input {
+    margin: 0 5px;
+}
+.radio-group:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.radio-group label {
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.radio-group input[type="radio"] {
+    display: none;
+}
+.radio-group input[type="radio"]:checked + label {
+    border-bottom: 3px solid #fff;
+}
+input[type="range"] + input[type="number"] {
+    background: inherit;
+    border: none;
+    color: inherit;
+}
+#densitySlider {
+    width: 130px;
+}
+#densityInput {
+    width: 50px;
+}
+.hidden {
+    display: none;
+}

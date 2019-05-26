@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Ruler">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Ruler</title>
+<link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="configPanel">
+<div class="configPanel-inner">
+  <label>Pixel Density (PPI)</label>
+  <div class="input-group">
+    <input type="range" id="densitySlider" value="0" step="1">
+    <input type="number" id="densityInput" value="0">
+  </div>
+  <label>Unit</label>
+  <div class="radio-group">
+    <input type="radio" id="unitInputCm" name="unit" value="cm">
+    <label for="unitInputCm">cm</label>
+    <input type="radio" id="unitInputInch" name="unit" value="inch">
+    <label for="unitInputInch">inch</label>
+  </div>
+</div>
+</div>
+
+<button id="configBtn" type="button" title="Settings"></button>
+
+<svg class="mainView hidden" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="xMinYMin slice">
+  <defs>
+    <pattern id="cm-minor" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="none" class="line-grid line-grid-minor" />
+    </pattern>
+    <pattern id="cm-medium" width="50" height="50" patternUnits="userSpaceOnUse">
+      <rect width="50" height="50" fill="url(#cm-minor)" class="line-grid line-grid-medium" />
+    </pattern>
+    <pattern id="cm-major" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="url(#cm-medium)" class="line-grid line-grid-major" />
+    </pattern>
+    <pattern id="cm-scale" width="100" height="100%" patternUnits="userSpaceOnUse">
+      <path d="M 0 0 L 0 70
+M 10 0 L 10 50
+M 20 0 L 20 50
+M 30 0 L 30 50
+M 40 0 L 40 50
+M 50 0 L 50 60
+M 60 0 L 60 50
+M 70 0 L 70 50
+M 80 0 L 80 50
+M 90 0 L 90 50
+M 100 0 L 100 70" fill="none" class="line-scale" />
+    </pattern>
+    <pattern id="inch-minor" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="none" class="line-grid line-grid-minor" />
+    </pattern>
+    <pattern id="inch-medium" width="80" height="80" patternUnits="userSpaceOnUse">
+      <rect width="80" height="80" fill="url(#inch-minor)" class="line-grid line-grid-medium" />
+    </pattern>
+    <pattern id="inch-major" width="160" height="160" patternUnits="userSpaceOnUse">
+      <rect width="160" height="160" fill="url(#inch-medium)" class="line-grid line-grid-major" />
+    </pattern>
+    <pattern id="inch-scale" width="160" height="100%" patternUnits="userSpaceOnUse">
+      <path d="M 0 0 L 0 70
+M 10 0 L 10 30
+M 20 0 L 20 40
+M 30 0 L 30 30
+M 40 0 L 40 50
+M 50 0 L 50 30
+M 60 0 L 60 40
+M 70 0 L 70 30
+M 80 0 L 80 60
+M 90 0 L 90 30
+M 100 0 L 100 40
+M 110 0 L 110 30
+M 120 0 L 120 50
+M 130 0 L 130 30
+M 140 0 L 140 40
+M 150 0 L 150 30
+M 160 0 L 160 70" fill="none" class="line-scale" />
+    </pattern>
+  </defs>
+
+  <g id="cm-ruler" class="ruler">
+    <rect width="100%" height="100%" fill="url(#cm-major)" />
+    <rect class="scaleX" width="100%" height="100%" fill="url(#cm-scale)" />
+    <rect class="scaleY" width="100%" height="100%" fill="url(#cm-scale)" transform="rotate(90) scale(1, -1)" />
+    <text x="130" y="98" class="number small">cm</text>
+  </g>
+
+  <g id="inch-ruler" class="ruler hidden">
+    <rect width="100%" height="100%" fill="url(#inch-major)" />
+    <rect class="scaleX" width="100%" height="100%" fill="url(#inch-scale)" />
+    <rect class="scaleY" width="100%" height="100%" fill="url(#inch-scale)" transform="rotate(90) scale(1, -1)" />
+    <text x="199" y="98" class="number small">inch</text>
+  </g>
+</svg>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

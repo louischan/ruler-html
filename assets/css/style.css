@@ -3,8 +3,8 @@
 }
 body {
     margin: 0;
-    background: #115198;
-    color: #fff;
+    background: #fff;
+    color: #192029;
     font-family: sans-serif;
     height: 100%;
 }
@@ -14,13 +14,13 @@ body {
 .number {
     text-anchor: middle;
     font-size: 36px;
-    fill: #fff;
+    fill: #192029;
 }
 .small {
     font-size: 26px;
 }
 .line-grid {
-    stroke: #548ac6;
+    stroke: #a0a9b5;
 }
 .line-grid-minor {
     stroke-width: 0.4;
@@ -32,7 +32,7 @@ body {
     stroke-width: 1.2;
 }
 .line-scale {
-    stroke: #fff;
+    stroke: #192029;
     stroke-width: 1.4;
 }
 button, input, select, textarea {
@@ -51,7 +51,7 @@ label {
     width: 40px;
     height: 40px;
     cursor: pointer;
-    background: #122142;
+    background: #192029;
     border: 0;
     margin: 0;
     color: inherit;
@@ -65,7 +65,7 @@ label {
     position: fixed;
     right: 30px;
     bottom: 40px;
-    background: #233865;
+    background: #323b48;
     color: #fff;
     border-radius: 3px;
     transition-duration: .15s;
@@ -119,4 +119,22 @@ input[type="range"] + input[type="number"] {
 }
 .hidden {
     display: none;
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #192029;
+        color: #fff;
+    }
+    .number {
+        fill: #fff;
+    }
+    .line-scale {
+        stroke: #fff;
+    }
+    #configBtn {
+        background: #101317;
+    }
+    #configPanel {
+        background: #192029;
+    }
 }

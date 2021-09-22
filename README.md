@@ -1,5 +1,5 @@
 # HTML Ruler
 
-An online ruler for measuring actual lengths in cm or inch.
+An online ruler for measuring actual lengths in cm or inch on-screen.
 
-[Try it.](https://louischan.github.io/ruler-html/)
+<https://louischan.github.io/ruler-html/>
